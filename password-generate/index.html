@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>密码生成器</title>
+    <link
+      href="https://static.oonnnoo.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="row">
+      <div class=" col m6 offset-m3 center">
+        <h1>密码生成器</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <form name="gen">
+                长度：
+                <p class="range-field">
+                  <input
+                    type="range"
+                    min="6"
+                    max="24"
+                    value="16"
+                    id="pwd-length"
+                  />
+                </p>
+
+                类型：
+                <p>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="str-type"
+                      class="filled-in"
+                      checked
+                      value="1"
+                    />
+
+                    <span>
+                      数字
+                    </span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="str-type"
+                      class="filled-in"
+                      checked
+                      value="2"
+                    />
+                    <span> 小写字母</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="str-type"
+                      class="filled-in"
+                      checked
+                      value="3"
+                    />
+                    <span> 大写字母</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="str-type"
+                      class="filled-in"
+                      checked
+                      value="4"
+                    />
+                    <span> 特殊符号</span>
+                  </label>
+                </p>
+              </form>
+            </div>
+            <div class="card-action row black-text white">
+              <div class="col">
+                <span id="password-value" contenteditable="true"></span>
+              </div>
+              <div class="col right">
+                <a class="waves-effect waves-light btn" id="regenerate"
+                  >重新生成</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://static.oonnnoo.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
