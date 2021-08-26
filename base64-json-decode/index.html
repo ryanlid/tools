@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Base64 JSON 字符串转换</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.60.0/lib/codemirror.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+	<style>
+		.CodeMirror {
+			height: 262px;
+			font-size: 14px;
+			background-color: #fff;
+			border: 1px solid #dbdbdb;
+			border-radius: 4px;
+			color: #363636;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="wrapper wp-json" id="pageContainer">
+    <a href="/">返回首页</a>
+		<h1 class="title has-text-centered">Base64 JSON 字符串转换</h1>
+		<div class="columns">
+			<div class="column">
+				<div class="field">
+					<label class="label">请输入待转换的 Base64 过的 JSON 字符串</label>
+            <div class="control">
+              <textarea
+                id="srcText"
+                placeholder="粘贴需要进行转换的字符串"
+                class="textarea"
+                ref="base64Source"
+                rows="10"
+                v-model="base64Source"
+                @paste="base64SourceChange"
+                @change="base64SourceChange"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">请输入需要进行格式化 JSON 字符串</label>
+            <div class="control">
+              <textarea
+                id="srcText"
+                placeholder="粘贴需要进行格式化的JSON字符串"
+                class="textarea"
+                ref="jsonSource"
+                rows="10"
+                v-model="jsonSource"
+                @paste="jsonSourcePaste"
+                @change="jsonSourceChange"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column field">
+          <label class="label">结果</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="转换结果将在这里显示，请在上面输入框输入内容"
+              ref="jsonResult"
+              rows="20"
+              v-model="resultContent"
+              readonly
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.60.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/addon/hint/show-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/addon/hint/xml-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/addon/hint/html-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/xml/xml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/css/css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/addon/edit/closetag.js"></script>
+    <script src="https://codemirror.net/2/lib/util/formatting.js"></script> -->
+    <script src="index.js"></script>
+    </script>
+  </body>
+</html>
