@@ -26,7 +26,6 @@ new Vue({
     // this.editor.setValue(this.resultContent);
   },
   methods: {
-    jsonSourcePaste() {},
     base64SourceChange() {
       let val = this.utf8Decode(this.base64Decode(this.base64Source));
 
