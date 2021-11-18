@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base64 JSON 字符串转换</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/codemirror@5.60.0/lib/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <style>
+      .CodeMirror {
+        height: 262px;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        color: #363636;
+      }
+      .full {
+        width: 100%;
+      }
+      .half {
+        width: 50%;
+      }
+      @media screen and (max-width: 1024px) {
+        .half {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Base64 JSON 字符串转换</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.60.0/lib/codemirror.min.css" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-	<style>
-		.CodeMirror {
-			height: 262px;
-			font-size: 14px;
-			background-color: #fff;
-			border: 1px solid #dbdbdb;
-			border-radius: 4px;
-			color: #363636;
-		}
-	</style>
-
-</head>
-
-<body>
-	<div class="wrapper wp-json container" id="pageContainer">
-    <a href="/">返回首页</a>
-		<h1 class="title has-text-centered">Base64 JSON 字符串转换</h1>
-		<div class="columns">
-			<div class="column is-flex-grow-1">
-				<div class="field">
-					<label class="label">请输入待转换的 Base64 过的 JSON 字符串</label>
+  <body>
+    <div class="wrapper wp-json container" id="pageContainer">
+      <a href="/">返回首页</a>
+      <h1 class="title has-text-centered">Base64 JSON 字符串转换</h1>
+      <div class="columns" style="width: 100%">
+        <div class="column is-flex-grow-1 half">
+          <div class="field">
+            <label class="label">请输入待转换的 Base64 过的 JSON 字符串</label>
             <div class="control">
               <textarea
                 id="srcText"
@@ -42,7 +57,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-flex-grow-1">
+        <div class="column is-flex-grow-1 half">
           <div class="field">
             <label class="label">请输入需要进行格式化 JSON 字符串</label>
             <div class="control">
@@ -89,6 +104,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/addon/edit/closetag.js"></script>
     <script src="https://codemirror.net/2/lib/util/formatting.js"></script> -->
     <script src="index.js"></script>
-    </script>
   </body>
 </html>
