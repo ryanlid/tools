@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个税计算器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        平均每月收入
+        <input type="text" @input="incomeMonthChange" v-model="incomeMonth" />
+      </div>
+      <div>
+        年度综合收入
+        <input type="text" @input="incomeYearChange" v-model="incomeYear" />
+      </div>
+      <div>
+        免税
+        <input type="text" value="60000" readonly />
+      </div>
+      <div>
+        年度累计专项扣除
+        <input type="text" @change="specialChange" v-model="special" />
+      </div>
+      <div>
+        应税综合所得
+        <input
+          type="text"
+          @change="taxableAmountChange"
+          :value="taxableAmount>0 ? taxableAmount : 0"
+          disabled
+        />
+      </div>
+      <div>
+        税率
+        <input
+          type="text"
+          :value="taxRate"
+        />
+      </div>
+      <div>
+        年度应缴税
+        <input
+          type="text"
+          @change="taxAmountYearChange"
+          :value="taxAmountYear>0 ? taxAmountYear : 0"
+          disabled
+        />
+      </div>
+      <div>
+        平均每月应缴税
+        <input
+          type="text"
+          @change="taxAmountMonthChange"
+          :value="taxAmountMonth>0 ? taxAmountMonth : 0"
+          disabled
+        />
+      </div>
+      <button @click="calc">计算</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
